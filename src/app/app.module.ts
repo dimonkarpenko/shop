@@ -10,6 +10,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { QuillModule } from 'ngx-quill';
 import { AuthInterceptor } from './shared/auth.interceptor';
+import { ProductComponent } from './product/product.component';
+import { SortingPipe } from './shared/sorting.pipe';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { AuthInterceptor } from './shared/auth.interceptor';
     MainLayoutComponent,
     MainPageComponent,
     ProductPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    ProductComponent,
+    SortingPipe
   ],
   imports: [
     BrowserModule,
