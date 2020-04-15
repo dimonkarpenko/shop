@@ -1,1 +1,46 @@
-<p>orders-page works!</p>
+<div *ngIf="orders.length; else noOrders">
+    <h2 class="text-center">Table of orders</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Phone</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Payment</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td> {{order.date | date: 'medium'}} </td>
+                <td> {{ order.phone }} </td>
+                <td> {{ order.name }} </td>
+                <!-- <td>
+                    <quill-view-html [content]="product.photo"></quill-view-html>
+                </td> -->
+                <td> {{ order.address }} </td>
+                <td>
+                    <div *ngFor="let product of order.orders">
+                        {{product.title}}
+                    </div>
+                </td>
+                <td> {{ order.price }} $</td>
+                <td>
+                    {{order.payment}}
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="remove(order.id)">Completed</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noOrders>
+    <p class="text-center">No orders</p>
+</ng-template>

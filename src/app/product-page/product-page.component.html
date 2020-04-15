@@ -19,7 +19,7 @@
                     </h2>
                 </div>
 
-                <button class="btn btn-dark" [routerLink]="['/cart']" routerLinkActive="router-link-active" >Add to cart</button>
+                <button class="btn btn-dark" [routerLink]="['/cart']" routerLinkActive="router-link-active" (click)="addProduct(product)">Add to cart</button>
             </div>
 
             <div class="item">
